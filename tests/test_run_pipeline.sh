@@ -9,7 +9,7 @@ g++ -std=c++17 -Wall -Wextra -Wpedantic "$repo_dir/run_pipeline.cpp" \
     -o "$work_dir/run_pipeline"
 
 output_file="$work_dir/unites_lexicales.txt"
-(cd "$repo_dir" && "$work_dir/run_pipeline" TP1/exemple.txt "$output_file")
+(cd "$repo_dir" && "$work_dir/run_pipeline" TP1/program.txt "$output_file")
 
 test -s "$output_file"
 grep -q '^1        BEGIN' "$output_file"

@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 
     const fs::path tp1_source = "TP1/tp1.c";
     const fs::path tp2_source = "TP2/tp2.c";
-    const fs::path input = argc >= 2 ? fs::path(argv[1]) : fs::path("TP1/exemple.txt");
+    const fs::path input = argc >= 2 ? fs::path(argv[1]) : fs::path("TP1/program.txt");
     const fs::path tokens = argc == 3
         ? fs::path(argv[2])
         : fs::path("TP1/unites_lexicales.txt");
