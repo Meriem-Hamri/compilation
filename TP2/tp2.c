@@ -97,27 +97,27 @@ static void lexical_error(int c)
     exit(EXIT_FAILURE);
 }
 
-static const char *token_name(token value)
+static const char *token_description(token value)
 {
     switch (value) {
-        case BEGIN_TOKEN: return "BEGIN";
-        case END_TOKEN:   return "END";
-        case READ_TOKEN:  return "READ";
-        case WRITE_TOKEN: return "WRITE";
-        case ID:           return "ID";
-        case INTLITERAL:   return "INTLITERAL";
-        case REALLITERAL:  return "REALLITERAL";
-        case LPAREN:       return "LPAREN";
-        case RPAREN:       return "RPAREN";
-        case SEMICOLON:    return "SEMICOLON";
-        case COMMA:        return "COMMA";
-        case ASSIGNOP:     return "ASSIGNOP";
-        case PLUSOP:       return "PLUSOP";
-        case MINUSOP:      return "MINUSOP";
-        case SCANEOF:      return "SCANEOF";
+        case BEGIN_TOKEN: return "'BEGIN'";
+        case END_TOKEN:   return "'END'";
+        case READ_TOKEN:  return "'READ'";
+        case WRITE_TOKEN: return "'WRITE'";
+        case ID:           return "un identificateur";
+        case INTLITERAL:   return "un entier";
+        case REALLITERAL:  return "un reel";
+        case LPAREN:       return "'('";
+        case RPAREN:       return "')'";
+        case SEMICOLON:    return "';'";
+        case COMMA:        return "','";
+        case ASSIGNOP:     return "':='";
+        case PLUSOP:       return "'+'";
+        case MINUSOP:      return "'-'";
+        case SCANEOF:      return "la fin du fichier";
     }
 
-    return "UNKNOWN";
+    return "un symbole inconnu";
 }
 
 /* Scanner repris du TP1, avec arret immediat sur erreur lexicale. */
@@ -233,10 +233,12 @@ static token next_token(void)
 
 static void syntax_error(const char *expected)
 {
-    fprintf(stderr, "%s:%u: erreur syntaxique: %s attendu, %s rencontre",
-            source_name, token_line, expected, token_name(next_token()));
-    if (next_token() != SCANEOF)
-        fprintf(stderr, " ('%s')", token_buffer);
+    fprintf(stderr, "%s:%u: erreur syntaxique : %s ; ",
+            source_name, token_line, expected);
+    if (next_token() == SCANEOF)
+        fputs("fin du fichier rencontree", stderr);
+    else
+        fprintf(stderr, "'%s' rencontre", token_buffer);
     fputc('\n', stderr);
     fclose(source_file);
     exit(EXIT_FAILURE);
@@ -244,8 +246,14 @@ static void syntax_error(const char *expected)
 
 static void match(token expected)
 {
-    if (next_token() != expected)
-        syntax_error(token_name(expected));
+    if (next_token() != expected) {
+        char message[128];
+        if (expected == SCANEOF)
+            snprintf(message, sizeof message, "fin du fichier attendue");
+        else
+            snprintf(message, sizeof message, "%s attendu", token_description(expected));
+        syntax_error(message);
+    }
 
     if (expected != SCANEOF)
         current_token = scanner();
@@ -261,11 +269,11 @@ static void add_op(void)
     if (tok == PLUSOP || tok == MINUSOP)
         match(tok);
     else
-        syntax_error("PLUSOP ou MINUSOP");
+        syntax_error("operateur '+' ou '-' attendu");
 }
 
 /* <prim> ::= '(' <expr> ')' | ID | INTLITERAL | REALLITERAL */
-static void prim(void)
+static void prim(const char *expected)
 {
     switch (next_token()) {
         case LPAREN:
@@ -283,7 +291,7 @@ static void prim(void)
             match(REALLITERAL);
             break;
         default:
-            syntax_error("ID, INTLITERAL, REALLITERAL ou LPAREN");
+            syntax_error(expected);
             break;
     }
 }
@@ -291,10 +299,14 @@ static void prim(void)
 /* <expr> ::= <prim> { <add_op> <prim> } */
 static void expression(void)
 {
-    prim();
+    prim("identificateur, nombre ou expression entre parentheses attendu");
     while (next_token() == PLUSOP || next_token() == MINUSOP) {
+        char message[128];
+        token op = next_token();
+        snprintf(message, sizeof message, "operande attendu apres %s",
+                 token_description(op));
         add_op();
-        prim();
+        prim(message);
     }
 }
 
@@ -346,7 +358,7 @@ static void inst(void)
             match(SEMICOLON);
             break;
         default:
-            syntax_error("instruction (ID, READ ou WRITE)");
+            syntax_error("instruction attendue (affectation, READ ou WRITE)");
             break;
     }
 }

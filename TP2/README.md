@@ -180,8 +180,14 @@ en réponse aux appels à `next_token()` présents dans les photos.
 ```c
 static void match(token expected)
 {
-    if (next_token() != expected)
-        syntax_error(token_name(expected));
+    if (next_token() != expected) {
+        char message[128];
+        if (expected == SCANEOF)
+            snprintf(message, sizeof message, "fin du fichier attendue");
+        else
+            snprintf(message, sizeof message, "%s attendu", token_description(expected));
+        syntax_error(message);
+    }
 
     if (expected != SCANEOF)
         current_token = scanner();
@@ -279,10 +285,14 @@ de leur ordre dans une construction grammaticale.
 suivi d'un nouveau primaire :
 
 ```c
-prim();
+prim("identificateur, nombre ou expression entre parentheses attendu");
 while (next_token() == PLUSOP || next_token() == MINUSOP) {
+    char message[128];
+    token op = next_token();
+    snprintf(message, sizeof message, "operande attendu apres %s",
+             token_description(op));
     add_op();
-    prim();
+    prim(message); /* Contexte : operande attendu apres '+' ou '-'. */
 }
 ```
 
@@ -327,12 +337,15 @@ notre version ne reprend pas toutes ces formes.
 
 ### 12. Arrêter à la première erreur et expliquer le diagnostic
 
-`syntax_error()` affiche le fichier, la ligne, les catégories attendues et
-le token rencontré. Si ce token n'est pas SCANEOF, son lexème est ajouté.
+`syntax_error()` affiche le fichier, la ligne, une attente formulée en français
+et le lexème rencontré, ou la fin du fichier. `token_description()` traduit
+les catégories internes en descriptions lisibles (`';'`, `un identificateur`,
+etc.). Après un opérateur, `expression()` transmet à `prim()` un contexte
+précis : `operande attendu apres '-'` ou `operande attendu apres '+'`.
 La fonction ferme le fichier et appelle `exit(EXIT_FAILURE)`.
 
 ```text
-exemple.txt:3: erreur syntaxique: SEMICOLON attendu, END rencontre ('END')
+exemple.txt:3: erreur syntaxique : ';' attendu ; 'END' rencontre
 ```
 
 La ligne indiquée est celle du **token rencontré**, donc l'endroit où le
