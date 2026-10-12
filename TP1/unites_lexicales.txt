@@ -19,4 +19,7 @@ LIGNE    UNITE            LEXEME
 4        ID               resultat
 4        RPAREN           )
 4        SEMICOLON        ;
+4        SEMICOLON        ;
+4        SEMICOLON        ;
+4        SEMICOLON        ;
 5        END              END
