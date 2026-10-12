@@ -1,0 +1,5 @@
+# Executables generes par la compilation
+*.exe
+
+# Configuration locale des taches VS Code
+.vscode/tasks.json
