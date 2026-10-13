@@ -1,0 +1,7 @@
+LIGNE    UNITE            LEXEME
+-----    -----            ------
+1        BEGIN            BEGIN
+1        ID               x
+1        ASSIGNOP         :=
+1        INTLITERAL       5
+2        END              END

@@ -1,5 +1,6 @@
 BEGIN
 READ(nombre);
-resultat := nombre + 10.32 - 2;
+resultat := nombre + 10.32 - ;
+nombre := allo 
 WRITE(resultat);
 END

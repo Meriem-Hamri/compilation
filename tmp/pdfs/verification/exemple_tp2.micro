@@ -1,0 +1,5 @@
+BEGIN
+READ(x, y);
+resultat := (x + 10.32) - ;
+WRITE(resultat, x + );
+END

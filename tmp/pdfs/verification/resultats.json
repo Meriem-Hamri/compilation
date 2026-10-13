@@ -1,0 +1,250 @@
+[
+  {
+    "cas": "exemple_tp1",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\exemple_tp1.tokens genere.\n",
+    "syntaxique": {
+      "code": 0,
+      "message": "Analyse syntaxique reussie: programme valide.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n2        READ             READ\n2        LPAREN           (\n2        ID               nombre\n2        RPAREN           )\n2        SEMICOLON        ;\n3        ID               resultat\n3        ASSIGNOP         :=\n3        ID               nombre\n3        PLUSOP           +\n3        REALLITERAL      10.32\n3        MINUSOP          -\n3        INTLITERAL       2\n3        SEMICOLON        ;\n4        WRITE            WRITE\n4        LPAREN           (\n4        ID               resultat\n4        RPAREN           )\n4        SEMICOLON        ;\n5        END              END\n"
+  },
+  {
+    "cas": "exemple_tp2",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\exemple_tp2.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\exemple_tp2.tokens:3: erreur syntaxique : operande attendu apres '-' ; ';' rencontre\nC:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\exemple_tp2.tokens:4: erreur syntaxique : operande attendu apres '+' ; ')' rencontre\nAnalyse terminee: 2 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n2        READ             READ\n2        LPAREN           (\n2        ID               x\n2        COMMA            ,\n2        ID               y\n2        RPAREN           )\n2        SEMICOLON        ;\n3        ID               resultat\n3        ASSIGNOP         :=\n3        LPAREN           (\n3        ID               x\n3        PLUSOP           +\n3        REALLITERAL      10.32\n3        RPAREN           )\n3        MINUSOP          -\n3        SEMICOLON        ;\n4        WRITE            WRITE\n4        LPAREN           (\n4        ID               resultat\n4        COMMA            ,\n4        ID               x\n4        PLUSOP           +\n4        RPAREN           )\n4        SEMICOLON        ;\n5        END              END\n"
+  },
+  {
+    "cas": "reels",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\reels.tokens genere.\n",
+    "syntaxique": {
+      "code": 0,
+      "message": "Analyse syntaxique reussie: programme valide.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        WRITE            WRITE\n1        LPAREN           (\n1        REALLITERAL      5.2\n1        COMMA            ,\n1        REALLITERAL      .5\n1        COMMA            ,\n1        REALLITERAL      5.\n1        COMMA            ,\n1        REALLITERAL      0.25\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "commentaire_eof",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\commentaire_eof.tokens genere.\n",
+    "syntaxique": {
+      "code": 0,
+      "message": "Analyse syntaxique reussie: programme valide.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        WRITE            WRITE\n1        LPAREN           (\n1        INTLITERAL       1\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "parentheses",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\parentheses.tokens genere.\n",
+    "syntaxique": {
+      "code": 0,
+      "message": "Analyse syntaxique reussie: programme valide.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        READ             READ\n1        LPAREN           (\n1        ID               x\n1        COMMA            ,\n1        ID               y\n1        RPAREN           )\n1        SEMICOLON        ;\n1        ID               x\n1        ASSIGNOP         :=\n1        LPAREN           (\n1        LPAREN           (\n1        ID               x\n1        PLUSOP           +\n1        INTLITERAL       2\n1        RPAREN           )\n1        MINUSOP          -\n1        ID               y\n1        RPAREN           )\n1        SEMICOLON        ;\n1        WRITE            WRITE\n1        LPAREN           (\n1        ID               x\n1        COMMA            ,\n1        REALLITERAL      3.5\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "operande_absent",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\operande_absent.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\operande_absent.tokens:1: erreur syntaxique : operande attendu apres '+' ; ';' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        ID               x\n1        ASSIGNOP         :=\n1        INTLITERAL       10\n1        PLUSOP           +\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "signe_unaire",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\signe_unaire.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\signe_unaire.tokens:1: erreur syntaxique : identificateur, nombre ou expression entre parentheses attendu ; '-' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        ID               x\n1        ASSIGNOP         :=\n1        MINUSOP          -\n1        REALLITERAL      2.5\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "scientifique",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\scientifique.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\scientifique.tokens:1: erreur syntaxique : ';' attendu ; 'e3' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        ID               x\n1        ASSIGNOP         :=\n1        INTLITERAL       1\n1        ID               e3\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "double_point",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\double_point.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\double_point.tokens:1: erreur syntaxique : ';' attendu ; '.3' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        ID               x\n1        ASSIGNOP         :=\n1        REALLITERAL      5.2\n1        REALLITERAL      .3\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "identifiant_chiffre",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\identifiant_chiffre.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\identifiant_chiffre.tokens:1: erreur syntaxique : ';' attendu ; 'abc' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        ID               x\n1        ASSIGNOP         :=\n1        INTLITERAL       12\n1        ID               abc\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "read_vide",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\read_vide.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\read_vide.tokens:1: erreur syntaxique : un identificateur attendu ; ')' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        READ             READ\n1        LPAREN           (\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "read_nombre",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\read_nombre.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\read_nombre.tokens:1: erreur syntaxique : un identificateur attendu ; '2' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        READ             READ\n1        LPAREN           (\n1        INTLITERAL       2\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "virgule_finale",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\virgule_finale.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\virgule_finale.tokens:1: erreur syntaxique : un identificateur attendu ; ')' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        READ             READ\n1        LPAREN           (\n1        ID               x\n1        COMMA            ,\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "write_vide",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\write_vide.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\write_vide.tokens:1: erreur syntaxique : identificateur, nombre ou expression entre parentheses attendu ; ')' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        WRITE            WRITE\n1        LPAREN           (\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "programme_vide",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\programme_vide.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\programme_vide.tokens:1: erreur syntaxique : instruction attendue (affectation, READ ou WRITE) ; 'END' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        END              END\n"
+  },
+  {
+    "cas": "apres_end",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\apres_end.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\apres_end.tokens:1: erreur syntaxique : fin du fichier attendue ; 'WRITE' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        WRITE            WRITE\n1        LPAREN           (\n1        INTLITERAL       1\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n1        WRITE            WRITE\n1        LPAREN           (\n1        INTLITERAL       2\n1        RPAREN           )\n1        SEMICOLON        ;\n"
+  },
+  {
+    "cas": "moins_commentaire",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\moins_commentaire.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\moins_commentaire.tokens:2: erreur syntaxique : ';' attendu ; 'END' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        ID               x\n1        ASSIGNOP         :=\n1        INTLITERAL       5\n2        END              END\n"
+  },
+  {
+    "cas": "point_seul",
+    "lexical": 1,
+    "message_lexical": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\point_seul.micro:1: erreur: caractere inattendu '.'\n1 erreur(s) lexicale(s) detectee(s).\n",
+    "syntaxique": null,
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        WRITE            WRITE\n1        LPAREN           (\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "illegal",
+    "lexical": 1,
+    "message_lexical": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\illegal.micro:1: erreur: caractere inattendu '@'\n1 erreur(s) lexicale(s) detectee(s).\n",
+    "syntaxique": null,
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        WRITE            WRITE\n1        LPAREN           (\n1        INTLITERAL       1\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "moins_avec_espace",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\moins_avec_espace.tokens genere.\n",
+    "syntaxique": {
+      "code": 0,
+      "message": "Analyse syntaxique reussie: programme valide.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        ID               x\n1        ASSIGNOP         :=\n1        INTLITERAL       5\n1        MINUSOP          -\n1        INTLITERAL       2\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "point_virgule_absent",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\point_virgule_absent.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\point_virgule_absent.tokens:1: erreur syntaxique : ';' attendu ; 'END' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        WRITE            WRITE\n1        LPAREN           (\n1        INTLITERAL       1\n1        RPAREN           )\n1        END              END\n"
+  },
+  {
+    "cas": "parenthese_absente",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\parenthese_absente.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\parenthese_absente.tokens:1: erreur syntaxique : ')' attendu ; ';' rencontre\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        WRITE            WRITE\n1        LPAREN           (\n1        LPAREN           (\n1        INTLITERAL       1\n1        PLUSOP           +\n1        INTLITERAL       2\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "fin_prematuree",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\fin_prematuree.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\fin_prematuree.tokens:1: erreur syntaxique : 'END' attendu ; fin du fichier rencontree\nAnalyse terminee: 1 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n1        WRITE            WRITE\n1        LPAREN           (\n1        INTLITERAL       1\n1        RPAREN           )\n1        SEMICOLON        ;\n"
+  },
+  {
+    "cas": "casse",
+    "lexical": 0,
+    "message_lexical": "Analyse terminee: C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\casse.tokens genere.\n",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\casse.tokens:1: erreur syntaxique : 'BEGIN' attendu ; 'begin' rencontre\nC:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\casse.tokens:1: erreur syntaxique : ':=' attendu ; 'WRITE' rencontre\nAnalyse terminee: 2 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    },
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        ID               begin\n1        WRITE            WRITE\n1        LPAREN           (\n1        INTLITERAL       1\n1        RPAREN           )\n1        SEMICOLON        ;\n1        END              END\n"
+  },
+  {
+    "cas": "buffer_long",
+    "lexical": 1,
+    "message_lexical": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\tmp\\pdfs\\verification\\buffer_long.micro:1: erreur: unite lexicale trop longue\n",
+    "syntaxique": null,
+    "tokens": "LIGNE    UNITE            LEXEME\n-----    -----            ------\n1        BEGIN            BEGIN\n"
+  },
+  {
+    "cas": "fichier_tokens_existant",
+    "syntaxique": {
+      "code": 1,
+      "message": "C:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\TP1\\unites_lexicales.txt:4: erreur syntaxique : instruction attendue (affectation, READ ou WRITE) ; ';' rencontre\nC:\\Users\\merie_luskpw8\\Documents\\ILISI2\\compilation\\TP\\TP1\\unites_lexicales.txt:4: erreur syntaxique : instruction attendue (affectation, READ ou WRITE) ; ';' rencontre\nAnalyse terminee: 2 erreur(s) syntaxique(s), 0 erreur(s) dans le fichier de tokens.\n"
+    }
+  }
+]
