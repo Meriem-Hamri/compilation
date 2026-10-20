@@ -28,7 +28,9 @@ static const char *source_name;
 static char token_buffer[TOKEN_BUFFER_SIZE];
 static size_t token_buffer_index;
 static unsigned int current_line = 1;
+static unsigned int current_column;
 static unsigned int token_line = 1;
+static unsigned int token_column = 1;
 static unsigned int error_count = 0;
 
 static void clear_buffer(void)
@@ -54,7 +56,9 @@ static int read_char(void)
     int c = fgetc(source_file);
 
     if (c == '\n')
-        ++current_line;
+        ++current_line, current_column = 0;
+    else if (c != EOF)
+        ++current_column;
 
     return c;
 }
@@ -65,7 +69,9 @@ static void unread_char(int c)
         return;
 
     if (c == '\n')
-        --current_line;
+        --current_line, current_column = 0;
+    else
+        --current_column;
 
     ungetc(c, source_file);
 }
@@ -84,6 +90,32 @@ static token check_reserved(void)
     return ID;
 }
 
+static void print_source_context(unsigned int line_number, unsigned int column)
+{
+    FILE *context_file;
+    char line[512];
+    char prefix[64];
+
+    context_file = fopen(source_name, "r");
+    if (context_file == NULL)
+        return;
+
+    for (unsigned int line_index = 1;
+         line_index <= line_number && fgets(line, sizeof line, context_file) != NULL;
+         ++line_index) {
+        if (line_index == line_number) {
+            line[strcspn(line, "\r\n")] = '\0';
+            snprintf(prefix, sizeof prefix, "Ligne %u : ", line_number);
+            fprintf(stderr, "    %s%s\n", prefix, line);
+            fprintf(stderr, "    %*s^\n",
+                    (int)strlen(prefix) + (int)column - 1, "");
+            break;
+        }
+    }
+
+    fclose(context_file);
+}
+
 static void lexical_error(int c)
 {
     if (isprint((unsigned char)c))
@@ -93,6 +125,7 @@ static void lexical_error(int c)
         fprintf(stderr, "%s:%u: erreur: caractere inattendu 0x%02X\n",
                 source_name, token_line, (unsigned int)(unsigned char)c);
 
+    print_source_context(token_line, token_column);
     ++error_count;
 }
 
@@ -130,6 +163,7 @@ static token scanner(void)
 
         clear_buffer();
         token_line = current_line;
+        token_column = current_column;
 
         if (isalpha((unsigned char)in_char)) {
             buffer_char(in_char);
