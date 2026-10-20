@@ -3,3 +3,9 @@
 
 # Configuration locale des taches VS Code
 .vscode/tasks.json
+
+# Linux binaries
+TP1/tp1
+TP2/tp2
+TP3/exo1
+lex.yy.c
