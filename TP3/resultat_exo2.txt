@@ -1,0 +1,12 @@
+
+#include <stdio.h>
+
+int main(void) {
+    int a = 1; 
+    char *s = "ceci /* n'est pas un commentaire */";
+    
+    a = a / 2;   
+    
+    printf("%s %d\n", s, a);
+    return 0;
+}

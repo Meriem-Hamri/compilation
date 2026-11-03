@@ -1,0 +1,15 @@
+/* Programme de test : en-tete
+   sur plusieurs lignes */
+#include <stdio.h>
+
+int main(void) {
+    int a = 1; /* commentaire en fin de ligne */
+    char *s = "ceci /* n'est pas un commentaire */";
+    /* ** etoiles ** et / slash */
+    a = a / 2;   /* division */
+    /*
+     * bloc
+     */
+    printf("%s %d\n", s, a);
+    return 0;
+}
