@@ -1,0 +1,63 @@
+== exo3a
+aeiou                -> ACCEPTE
+facetious            -> ACCEPTE
+abstemious           -> ACCEPTE
+AbEcIdOrU            -> ACCEPTE
+uoiea                -> REJETE (non reconnu)
+aeio                 -> REJETE (non reconnu)
+banane               -> REJETE (non reconnu)
+bonjour              -> REJETE (non reconnu)
+xaxexixoxux          -> ACCEPTE
+ae1iou               -> REJETE (non reconnu)
+--- 5 accepte(s), 5 rejete(s) ---
+
+== exo3b
+a                    -> ACCEPTE
+b                    -> REJETE (non reconnu)
+ab                   -> ACCEPTE
+ba                   -> ACCEPTE
+bab                  -> REJETE (non reconnu)
+abb                  -> ACCEPTE
+bba                  -> ACCEPTE
+bbb                  -> REJETE (non reconnu)
+aba                  -> ACCEPTE
+abc                  -> REJETE (non reconnu)
+c                    -> REJETE (non reconnu)
+bbbabb               -> REJETE (non reconnu)
+baab                 -> REJETE (non reconnu)
+--- 6 accepte(s), 7 rejete(s) ---
+
+== exo3c
+a                    -> ACCEPTE
+b                    -> ACCEPTE
+ab                   -> ACCEPTE
+ba                   -> ACCEPTE
+aa                   -> REJETE (non reconnu)
+bb                   -> REJETE (non reconnu)
+abab                 -> ACCEPTE
+baba                 -> ACCEPTE
+ababa                -> ACCEPTE
+abba                 -> REJETE (non reconnu)
+aab                  -> REJETE (non reconnu)
+bab                  -> ACCEPTE
+abc                  -> REJETE (non reconnu)
+--- 8 accepte(s), 5 rejete(s) ---
+
+== exo3d
+a                    -> ACCEPTE
+b                    -> ACCEPTE
+aba                  -> REJETE (non reconnu)
+ab                   -> ACCEPTE
+ba                   -> ACCEPTE
+abb                  -> ACCEPTE
+abab                 -> REJETE (non reconnu)
+bab                  -> ACCEPTE
+abba                 -> ACCEPTE
+bbabb                -> ACCEPTE
+aabaa                -> REJETE (non reconnu)
+bbbbb                -> ACCEPTE
+aaabbb               -> ACCEPTE
+babbaab              -> ACCEPTE
+abc                  -> REJETE (non reconnu)
+--- 11 accepte(s), 4 rejete(s) ---
+
