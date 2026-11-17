@@ -1,6 +1,6 @@
 # TP4 - Implémentation d'automates (analyseur lexical)
 
-Binôme : HAMRI Meliem, BAKKAT Zakaria
+Binôme : HAMRI Meriem, BAKKARI Zakariae
 
 Unités : `si`, `alors`, `sinon`, `oprel`, `id`, `nb` (mots-clés réservés).
 Compilation / test : `gcc -Wall -o tp4 tp4.c && ./tp4 test.txt`
