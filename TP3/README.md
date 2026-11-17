@@ -117,9 +117,9 @@ Reconnaître et étiqueter les éléments d'un langage de programmation :
 
 ### Fichiers de l'Exercice
 
-- **`exo1.l`** : Fichier source Flex complet contenant l'ensemble des règles.
-- **`exo1.dat`** : Programme d'exemple testé.
-- **`Makefile`** : Automatisation de la compilation et des tests.
+- **`exo1/exo1.l`** : Fichier source Flex complet contenant l'ensemble des règles.
+- **`exo1/exo1.dat`** : Programme d'exemple testé.
+- **`exo1/Makefile`** : Compilation et tests de cet exercice (un `Makefile` racine lance les exercices 1, 2 et 3).
 
 ---
 
@@ -127,7 +127,7 @@ Reconnaître et étiqueter les éléments d'un langage de programmation :
 
 #### Méthode rapide avec le Makefile :
 ```bash
-# Compiler exo1
+# Depuis le dossier exo1/ (ou à la racine pour tout compiler)
 make
 
 # Compiler et lancer directement le test
@@ -153,7 +153,7 @@ gcc -Wall lex.yy.c -o exo1
 
 ### Exemple de Résultat Obtenu
 
-Sur le programme d'entrée [`exo1.dat`](file:///run/media/zakariae-bakkari/linux/Education/Phase1/Compilation/Assignments/compilation-tp/TP3/exo1.dat) :
+Sur le programme d'entrée [`exo1.dat`](exo1/exo1.dat) :
 ```c
 for( i=0; i < 10; i++ ) {
     truc[i] = 0;
