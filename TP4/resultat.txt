@@ -1,0 +1,35 @@
+Ligne 1 : si x1 <= 12.5E-3 alors y = 7 sinon z <> 3
+   SI     <si>
+   ID     <x1>
+   OPREL  <<=>
+   NB     <12.5E-3>
+   ALORS  <alors>
+   ID     <y>
+   OPREL  <=>
+   NB     <7>
+   SINON  <sinon>
+   ID     <z>
+   OPREL  <<>>
+   NB     <3>
+Ligne 2 : si a>=10 alors b < 2.
+   SI     <si>
+   ID     <a>
+   OPREL  <>=>
+   NB     <10>
+   ALORS  <alors>
+   ID     <b>
+   OPREL  <<>
+   NB     <2>
+   ERREUR lexicale : caractere '.' (col 21)
+Ligne 3 : sinonx alors1 sin 3E 4E+ @ 007.50 #
+   ID     <sinonx>
+   ID     <alors1>
+   ID     <sin>
+   NB     <3>
+   ID     <E>
+   NB     <4>
+   ID     <E>
+   ERREUR lexicale : caractere '+' (col 24)
+   ERREUR lexicale : caractere '@' (col 26)
+   NB     <007.50>
+   ERREUR lexicale : caractere '#' (col 35)

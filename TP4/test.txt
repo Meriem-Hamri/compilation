@@ -1,0 +1,3 @@
+si x1 <= 12.5E-3 alors y = 7 sinon z <> 3
+si a>=10 alors b < 2.
+sinonx alors1 sin 3E 4E+ @ 007.50 #
